@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sky_game_manager_model_security_Channel" object="${channel}" path="/security/channels" z="3KNCm9N/jTuquhA4r+Cq7yjnLSc=">
+        <field:display field="channelId" id="s_com_sky_game_manager_model_security_Channel_channelId" object="${channel}" z="/b6+1E3Q4DJEXmkz2I1D2W4yvCE="/>
+        <field:display date="true" dateTimePattern="${channel_createtime_date_format}" field="createTime" id="s_com_sky_game_manager_model_security_Channel_createTime" object="${channel}" z="sKzXMGtwMuMWt3p9CGES2pmq3Ms="/>
+    </page:show>
+</div>

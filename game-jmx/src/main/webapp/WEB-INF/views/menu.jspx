@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_jmxroom" z="+CDAFtwuiwZvLQJPJufu5d+/JSQ=">
+               <menu:item id="fi_jmxroom_channelidequalsandroomidequalsandvipnot" messageCode="global_menu_find" url="/jmx/room?find=ByChannelIdEqualsAndRoomIdEqualsAndVipNot&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="0lrfjnI5n3/Qd/txJd9ywvLLGQg="/>
+        </menu:category>
+    </menu:menu>
+</div>

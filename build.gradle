@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+description = "User Service Implementation"
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    deployerJars
+}
+
+dependencies {
+    deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        name = 'sshDeployer' // optional
+        configuration = configurations.deployerJars
+        repository(url: "scp://developer@192.168.1250:/home/developer") {
+            authentication(userName: "developer", password: "123456")
+        }
+    }
+}

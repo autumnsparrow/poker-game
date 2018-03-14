@@ -1,0 +1,128 @@
+/**
+ * 
+ */
+package com.sky.game.game.mina.context;
+
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.Log;
+
+import org.springframework.scheduling.annotation.Scheduled;
+
+import com.j256.simplejmx.common.JmxAttributeMethod;
+import com.j256.simplejmx.common.JmxOperation;
+import com.j256.simplejmx.common.JmxResource;
+
+
+/**
+ * @author sparrow
+ *
+ */
+
+@JmxResource(domainName="com.sky.game.context",beanName="SessionContextFactory",description=" Mina Server IoSession Context.")
+public class SessionContextFactory  implements IGameConnectionStateChanged{
+	
+	private   final ConcurrentHashMap<String, SessionContext> S_SESSION_MAP=new ConcurrentHashMap<String,SessionContext >();
+	private static final Log log=LogFactory.getLog(SessionContextFactory.class);
+	
+	
+	IGameConnectionStateChanged  gameConnectionStateChanged;
+	
+	public void addSessionContext(SessionContext ctx){
+		S_SESSION_MAP.put(ctx.connectionId, ctx);
+	}
+	
+	
+	public void removeSession(SessionContext ctx){
+		if(S_SESSION_MAP.containsKey(ctx.connectionId))
+			S_SESSION_MAP.remove(ctx.connectionId);
+	}
+	
+	
+	private SessionContext getSessionContext(String connectionId){
+		SessionContext ctx=null;
+		if(S_SESSION_MAP.containsKey(connectionId)){
+			ctx=S_SESSION_MAP.get(connectionId);
+		}
+		return ctx;
+	}
+	
+	@JmxOperation(parameterNames={"connectionId"},parameterDescriptions={" get deviceid from the connection id"})
+	public String deviceId(String connecitonId){
+		SessionContext ctx=getSessionContext(connecitonId);
+		String deviceId=null;
+		if(ctx!=null){
+			deviceId=ctx.deviceId;
+		}
+		return deviceId;
+	}
+	
+	@JmxOperation(parameterNames={"connectionId"},parameterDescriptions={" get session info from the connection id"})
+	public String sessionInfo(String connectionId){
+		String msg=null;
+		if(S_SESSION_MAP.containsKey(connectionId)){
+			msg=S_SESSION_MAP.get(connectionId).toString();
+		}
+		log.info(msg);
+		return msg;
+	}
+	
+	@JmxAttributeMethod(description=" get connection ids!")
+	public String getConnectionIds(){
+		StringBuffer sb=new StringBuffer();
+		
+		for(String connectionId:S_SESSION_MAP.keySet()){
+			sb.append(connectionId).append("\r\n");
+		}
+		String msg=sb.toString();
+		log.info(msg);
+		return msg;
+	}
+	
+	@JmxOperation(description="dump the connection context")
+	@Scheduled(cron="0 0/1 0 * * ?") 
+	public void dump(){
+		for(String connectionId:S_SESSION_MAP.keySet()){
+			//sb.append(connectionId).append("\r\n");
+			sessionInfo(connectionId);
+		}
+	}
+
+
+	public void onGameConnectionStateChanged(String connectionId,
+			GameConnectionStates states) {
+		// TODO Auto-generated method stub
+		if(gameConnectionStateChanged!=null)
+			gameConnectionStateChanged.onGameConnectionStateChanged(connectionId, states);
+		
+		log.info("["+connectionId+"] - "+states.toString());
+	}
+
+
+	public void onGameConnectionStateBinding(String connectionId, String deviceId) {
+		// TODO Auto-generated method stub
+		if(gameConnectionStateChanged!=null)
+			gameConnectionStateChanged.onGameConnectionStateBinding(connectionId, deviceId);
+		log.info("["+connectionId+"] -B-"+deviceId);
+	}
+
+
+	public void onGameConnectionStateUnBind(String connectionId) {
+		// TODO Auto-generated method stub
+		if(gameConnectionStateChanged!=null)
+			gameConnectionStateChanged.onGameConnectionStateUnBind(connectionId);
+		log.info("GameConnectionStates:["+connectionId+"] -L-");
+	}
+
+
+	public void clearup() {
+		// TODO Auto-generated method stub
+		
+		if(gameConnectionStateChanged!=null)
+			gameConnectionStateChanged.clearup();
+		log.info("GameConnectionStates:cleanup");
+		
+	}
+
+}

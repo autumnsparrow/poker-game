@@ -1,0 +1,33 @@
+<LLGameTournamentConfig xmlns="">
+	<channelId>1</channelId>
+	<ftType>1</ftType>
+	<ftDescription>free tournament</ftDescription>
+	<freeTournamentConfigs>
+		
+		<freeTournamentConfigs>/META-INF/tournament/1/1000.xml</freeTournamentConfigs>
+		<freeTournamentConfigs>/META-INF/tournament/1/1001.xml</freeTournamentConfigs>
+		<freeTournamentConfigs>/META-INF/tournament/1/1002.xml</freeTournamentConfigs>
+		<freeTournamentConfigs>/META-INF/tournament/1/1003.xml</freeTournamentConfigs>
+	</freeTournamentConfigs>
+	<etType>2</etType>
+	<etDescription></etDescription>
+	<etEliminationTournamentConfigs>
+		
+		<etEliminationTournamentConfigs>/META-INF/tournament/1/2000.xml</etEliminationTournamentConfigs>
+		<etEliminationTournamentConfigs>/META-INF/tournament/1/2001.xml</etEliminationTournamentConfigs>
+		
+	</etEliminationTournamentConfigs>
+	<vipType>3</vipType>
+	<vipDescription></vipDescription>
+	<vipEliminationTournamentConfigs>
+		
+		<vipEliminationTournamentConfigs>/META-INF/tournament/1/3000.xml</vipEliminationTournamentConfigs>
+	
+	</vipEliminationTournamentConfigs>
+	<btType>4</btType>
+	<btDescription></btDescription>
+	<blockadeTournamentConfigs>
+		<blockadeTournamentConfigs>/META-INF/tournament/1/4000.xml</blockadeTournamentConfigs>
+		
+	</blockadeTournamentConfigs>
+</LLGameTournamentConfig>

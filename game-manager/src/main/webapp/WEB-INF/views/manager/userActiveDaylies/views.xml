@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="manager/userActiveDaylies/list">
+        <put-attribute name="body" value="/WEB-INF/views/manager/userActiveDaylies/list.jspx"/>
+    </definition>
+<definition extends="default" name="manager/userActiveDaylies/show">
+        <put-attribute name="body" value="/WEB-INF/views/manager/userActiveDaylies/show.jspx"/>
+    </definition>
+<definition extends="default" name="manager/userActiveDaylies/create">
+        <put-attribute name="body" value="/WEB-INF/views/manager/userActiveDaylies/create.jspx"/>
+    </definition>
+<definition extends="default" name="manager/userActiveDaylies/update">
+        <put-attribute name="body" value="/WEB-INF/views/manager/userActiveDaylies/update.jspx"/>
+    </definition>
+<definition extends="default" name="manager/userActiveDaylies/findUserActiveDayliyStaticsesByChannelId">
+        <put-attribute name="body" value="/WEB-INF/views/manager/userActiveDaylies/findUserActiveDayliyStaticsesByChannelId.jspx"/>
+    </definition>
+<definition extends="default" name="manager/userActiveDaylies/findUserActiveDayliyStaticsesByStaticsDateBetween">
+        <put-attribute name="body" value="/WEB-INF/views/manager/userActiveDaylies/findUserActiveDayliyStaticsesByStaticsDateBetween.jspx"/>
+    </definition>
+</tiles-definitions>

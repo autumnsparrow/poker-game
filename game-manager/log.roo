@@ -1,0 +1,115 @@
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 10:11:36
+project --topLevelPackage com.sky.game.manager
+jpa setup --provider ECLIPSELINK --database MYSQL 
+quit
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2014-12-08 10:12:35
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 10:12:38
+entity jpa --class com.sky.game.manager.activerecord.UserActiveDayliyStatics --activeRecord true --table user_active_dayliy_statics
+enum type --class ~.types.UserRegisterTypes
+enum constant --name Normal
+enum constant --name Visitor
+focus --class ~.activerecord.UserActiveDayliyStatics
+field enum --fieldName userType --type ~.types.UserRegisterTypes 
+field number --fieldName day2Active --type int --column  day2_active
+field number --fieldName day3Active --type int --column  day3_active
+field number --fieldName day7Active --type int --column  day7_active
+field number --fieldName day30Active --type int --column  day30_active
+field number --fieldName chargeMoneyAmount --type long --column  charge_money_amount
+// [failed] field number --fieldName chargeMoneyAmount --type long --column  charge_money_amount
+field date --fieldName staticsDate --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd hh:mm:ss" --column statics_date
+web mvc setup
+security setup
+entity jpa --class ~.model.security.Principal 
+field string --fieldName username --notNull --sizeMax 50 --sizeMin 3
+field string --fieldName password --notNull --sizeMax 50 --sizeMin 3
+field boolean --fieldName enabled
+entity jpa --class ~.model.security.Authority 
+field string --fieldName roleId --notNull --sizeMax 10 --sizeMin 8
+field string --fieldName authority --notNull 
+field reference --fieldName username --type ~.model.security.Principal
+// [failed] field reference --fieldName roleId --type ~.model.security.Authority
+// [failed] field reference --fieldName roleId --type ~.model.security.Authority
+web mvc scaffold --class ~.web.security.UserController 
+web mvc scaffold --class ~.web.security.RoleController 
+web mvc scaffold --class ~.web.security.RoleMappingController 
+// [failed] field reference --fieldName username --type ~.model.security.Principal
+// [failed] field reference --fieldName roleId --type ~.model.security.Authorit
+entity jpa --class ~.model.security.AuthorityPrincipalAssignment --table security_role_assignments 
+ field reference --fieldName username --type ~.model.security.Principal
+// [failed]  field reference --fieldName username --type ~.model.security.Authority
+field reference --fieldName roleId --type ~.model.security.Authority
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 10:39:22
+web mvc scaffold --class ~.web.security.UserController --backingType ~.model.security.Principal --path /security/users
+web mvc scaffold --class ~.web.security.RoleController --backingType ~.model.security.Authority --path /security/roles
+web mvc scaffold --class ~.web.security.AssignmentController --backingType ~.model.security.AuthorityPrincipalAssignment --path /security/assignments
+entity jpa --class ~.model.security.Channel --table  sdk_channel
+web mvc scaffold --class ~.web.security.ChannelController --backingType ~.model.security.Channel --path /security/channels
+entity jpa --class ~.model.security.ChannelPrincipalAssignment --table channel_principals_ass
+entity jpa --class ~.model.security.ChannelPrincipalAssignment --table channel_principals_as
+entity jpa --class ~.model.security.ChannelPrincipalAssignment --table channel_principals_assignment
+web mvc scaffold --class ~.web.security.ChannelPrincipalAssignmentController --backingType ~.model.security.ChannelPrincipalAssignment --path /security/channelPrincipalAssignments
+service type --interface ~.filt
+service type --interface  ~.filter.UserService --class ~.filter.UserServiceImpl --entity ~.model.security.ChannelPrincipalAssignment
+focus --class ~.model.security.Channel
+field number --fieldName channelId --type int --column  channel_id
+field date --fieldName createTime --type  java.util.Date --column
+// [failed] field date --fieldName createTime --type  java.util.Date --column create_time
+focus --class ~.model.security.ChannelPrincipalAssignment
+field reference --fieldName channel --type ~.model.security.Channel
+field reference --fieldName principle --type ~.model.security.Principal
+finder list
+finder add findChannelPrincipalAssignmentsByPrinciple
+focus --class ~.activerecord.UserActiveDayliyStatics
+focus --class ~.activerecord.UserActiveDayliyStatics
+finder list
+finder add findUserActiveDayliyStaticsesByStaticsDateBetween
+// [failed] web mvc finder add --formBackingType ~.activerecord.UserActiveDayliyStatics
+web mvc scaffold --class ~.web.manager.UserActiveDayliyController --backingType ~.activerecord.UserActiveDayliyStatics
+web mvc scaffold --class ~.web.manager.UserActiveDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /manager/userActiveDaylies
+web mvc finder add --class ~.web.manager.UserActiveDayliyController --formBackingType ~.activerecord.UserActiveDayliyStatics
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 14:35:00
+web mvc scaffold --class ~.web.channel.ChannelUserActiveDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channel/statics
+focus --class ~.activerecord.UserActiveDayliyStatics
+finder list
+finder list
+finder add findUserActiveDayliyStaticsesByChannelId
+web mvc update tags 
+web mvc scaffold --class ~.web.channel.ChannelUserDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channel/dayliyStatics
+web mvc scaffold --class ~.web.channel.ChannelUserDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channel/dayliyStatics
+web mvc scaffold --class ~.web.channel.ChannelUserDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channel/dayliyStatics
+web mvc scaffold --class ~.web.manager.UserActiveDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /manager/userActiveDaylies
+quit
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2014-12-08 15:38:15
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 15:38:19
+web mvc scaffold --class ~.web.manager.UserActiveDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /manager/userActiveDaylies
+web mvc scaffold --class ~.web.channel.ChannelUserDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channel/dayliyStatics
+quit
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2014-12-08 15:40:58
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 15:41:01
+web mvc scaffold --class ~.web.channel.ChannelUserDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channel/dayliyStatics
+quit
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2014-12-08 15:51:34
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 15:51:38
+web mvc scaffold --class ~.web.manager.UserActiveDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /manager/userActiveDaylies
+web mvc scaffold --class ~.web.channel.ChannelUserDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channel/dayliyStatics
+quit
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2014-12-08 15:53:31
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 15:53:35
+web mvc scaffold --class ~.web.channel.ChannelUserDayliyController --backingType ~.activerecord.UserActiveDayliyStatics --path /channeluser/dayliyStatics
+quit
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2014-12-08 15:54:30
+// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2014-12-08 15:54:34
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-12-18 08:00:49
+database reverse engineer --schema no-schema-required --activeRecord true --disableGeneratedIdentifiers true --disableVersionFields true --package com.sky.game.manager.remote.activerecord
+web mvc scaffold --class ~.web.manager.UserBankController --backingType ~.remote.activerecord.UserBank
+quit
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-12-18 09:46:58
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-12-18 10:20:06
+quit
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-12-18 10:20:26
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-12-18 10:59:56
+web mvc scaffold --class ~.web.manager.UserAccountController --backingType ~.remote.activerecord.UserAccount
+quit
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-12-18 11:02:39
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-05-22 14:40:52
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-05-22 15:46:56

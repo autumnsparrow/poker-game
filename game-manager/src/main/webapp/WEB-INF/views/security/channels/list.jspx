@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sky_game_manager_model_security_Channel" items="${channels}" z="1KQyV3k2wbQY/GxnVriaDyHl4/A=">
+        <table:table data="${channels}" id="l_com_sky_game_manager_model_security_Channel" path="/security/channels" z="iLgFMTkbhimCNSETbHh0lcnbOc4=">
+            <table:column id="c_com_sky_game_manager_model_security_Channel_channelId" property="channelId" z="ZWLelpnxVKcj2FfUfa8osdnlcEc="/>
+            <table:column date="true" dateTimePattern="${channel_createtime_date_format}" id="c_com_sky_game_manager_model_security_Channel_createTime" property="createTime" z="oL2WRz4h4Q0CqnXyu9PUnrJR68A="/>
+        </table:table>
+    </page:list>
+</div>

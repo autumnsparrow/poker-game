@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sky_game_manager_remote_activerecord_UserAccount" items="${useraccounts}" z="2OW4DR6oak1KjAGaa0oZSz0F3tc=">
+        <table:table data="${useraccounts}" id="l_com_sky_game_manager_remote_activerecord_UserAccount" path="/useraccounts" z="WWdcNx9fabjqBpt7CgjOhjRGezA=">
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserAccount_name" property="name" z="c/thnB/IzlXGNJ/VY5hXI5N5JCU="/>
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserAccount_nickName" property="nickName" z="HMpP8yMAfTM77fRtV3EjwNqIGaQ="/>
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserAccount_userPassword" property="userPassword" z="Ixw8WxRCNMnpnfDutI8aIZ7k7rw="/>
+            <table:column calendar="true" dateTimePattern="${userAccount_updatetime_date_format}" id="c_com_sky_game_manager_remote_activerecord_UserAccount_updateTime" property="updateTime" z="q61RKlr1jLScFyPIJHpiyQ+3Mu4="/>
+            <table:column calendar="true" dateTimePattern="${userAccount_createtime_date_format}" id="c_com_sky_game_manager_remote_activerecord_UserAccount_createTime" property="createTime" z="83YumYUe8NRZ6Y0XshUIeblg2Tw="/>
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserAccount_userType" property="userType" z="LN8W/GPmjnyL50n+fpLylL7IT+E="/>
+        </table:table>
+    </page:list>
+</div>

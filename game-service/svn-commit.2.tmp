@@ -1,0 +1,5 @@
+
+--This line, and those below, will be ignored--
+
+M    src/main/java/com/sky/game/service/logic/game/GameEnrollService.java
+M    src/main/java/com/sky/game/service/logic/game/GameUserItemService.java

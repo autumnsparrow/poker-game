@@ -1,0 +1,14 @@
+{"enrollTickets":[{"itemId":1,"itemAmount":1000},{"itemId":2,"itemAmount":2}],
+"integral":10000,
+"enrollTimes":[{"userPropertyId":1,"entrollTimesFree":10,"enrollTimesPayed":50,"perDayEnrollTimes":2},{"userPropertyId":2,"entrollTimesFree":50,"enrollTimesPayed":100,"perDayEnrollTimes":20}],
+"stages":[
+{"level":0,"name":"Level 0","baseIntergal":0,"baseScore":0,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":1,"name":"Level 1","baseIntergal":10000,"baseScore":1000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":2,"name":"Level 2","baseIntergal":20000,"baseScore":2000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":3,"name":"Level 3","baseIntergal":30000,"baseScore":3000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":4,"name":"Level 4","baseIntergal":40000,"baseScore":4000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":5,"name":"Level 5","baseIntergal":50000,"baseScore":5000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":6,"name":"Level 6","baseIntergal":60000,"baseScore":6000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":7,"name":"Level 7","baseIntergal":70000,"baseScore":7000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":8,"name":"Level 8","baseIntergal":80000,"baseScore":8000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3},
+{"level":9,"name":"Level 9","baseIntergal":90000,"baseScore":9000,"timeSchedulePattern":"* 9-10 * * * ","rewards":{"1-5":{"itemId":6,"itemAmount":100},"6-7":{"itemId":6,"itemAmount":20},"29-30":{"itemId":6,"itemAmount":3}},"matchedUserFixedDeckRound":3}]}

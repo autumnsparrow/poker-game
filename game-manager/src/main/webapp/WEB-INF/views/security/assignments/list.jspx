@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sky_game_manager_model_security_AuthorityPrincipalAssignment" items="${authorityprincipalassignments}" z="3bv7whSRuhBLjpNIRTf69o8AF9Q=">
+        <table:table data="${authorityprincipalassignments}" id="l_com_sky_game_manager_model_security_AuthorityPrincipalAssignment" path="/security/assignments" z="oVoACwTMfFyHx5vktmH2Xacl/5U=">
+            <table:column id="c_com_sky_game_manager_model_security_AuthorityPrincipalAssignment_username" property="username" z="ExoG9RFTcVRbvV5UkNyZf+qc+2A="/>
+            <table:column id="c_com_sky_game_manager_model_security_AuthorityPrincipalAssignment_roleId" property="roleId" z="ezdmHgrG7JpW44vwPrpjr3eZaMk="/>
+        </table:table>
+    </page:list>
+</div>

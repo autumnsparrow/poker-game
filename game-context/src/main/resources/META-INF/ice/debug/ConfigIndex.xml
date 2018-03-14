@@ -1,0 +1,20 @@
+<Config-List xmlns="">
+	<Config>
+		<index>
+			<name>Landlord</name>
+			<url>/META-INF/ice/debug/Landlord.xml</url>
+		</index>
+		<index>
+			<name>Payment</name>
+			<url>/META-INF/ice/debug/Payment.xml</url>
+		</index>
+		<index>
+			<name>Protocol</name>
+			<url>/META-INF/ice/debug/Protocol.xml</url>
+		</index>
+		<index>
+			<name>Websocket</name>
+			<url>/META-INF/ice/debug/Websocket.xml</url>
+		</index>
+	</Config>
+</Config-List>

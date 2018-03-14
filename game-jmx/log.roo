@@ -1,0 +1,27 @@
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2015-02-11 15:04:54
+project --topLevelPackage com.sky.game.jmx
+jpa setup --provider ECLIPSELINK --database HYPERSONIC_IN_MEMORY 
+hint
+entity jpa --class com.sky.game.jmx.JmxRoom --activeRecord true
+field number --fieldName channelId --type java.lang.Long
+field number --fieldName roomId --type java.lang.Long
+field boolean --fieldName vip 
+hint
+finder list
+finder list --depth 3
+find add findJmxRoomsByChannelIdEqualsAndRoomIdEqualsAndVipNot
+hint
+web mvc setup
+web mvc finder all
+web mvc finder all
+// [failed] web mvc finder add --formBackingType ~.JmxRoom
+web mvc scaffold --class ~.web.JmxRoomConroller --path /jmx/room --backingType ~.JmxRoom
+// [failed] web mvc finder add --formBackingType ~.JmxRoom 
+web mvc finder add --formBackingType ~.JmxRoom --class ~.web.JmxRoomConroller
+field string --fieldName content
+web mvc finder add --formBackingType ~.JmxRoom --class ~.web.JmxRoomConroller
+web mvc finder add --formBackingType ~.JmxRoom --class ~.web.JmxRoomConroller
+focus --class ~.JmxRoom
+field string --fieldName content
+quit
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2015-02-11 15:32:43

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sky_game_manager_model_security_ChannelPrincipalAssignment" object="${channelprincipalassignment}" path="/security/channelPrincipalAssignments" z="s5Rv90mlWHjJBN1LuQuj5KeZgdk=">
+        <field:display field="channel" id="s_com_sky_game_manager_model_security_ChannelPrincipalAssignment_channel" object="${channelprincipalassignment}" z="xpBCaZxFGqa+EJdTgDd2nt5OR/o="/>
+        <field:display field="principle" id="s_com_sky_game_manager_model_security_ChannelPrincipalAssignment_principle" object="${channelprincipalassignment}" z="Nrl0/4ZpV+fKTmdHRT2gNvA0uVo="/>
+    </page:show>
+</div>

@@ -1,0 +1,747 @@
+
+<LLGameTournamentConfig xmlns="">
+	<channelId>1</channelId>
+	<ftType>1</ftType>
+	<ftDescription>散桌</ftDescription>
+	<freeTournamentConfigs>
+		<freeTournamentConfigs>
+			<roomId>10000</roomId>
+			<roomName>初来乍到</roomName>
+			<base>5</base>
+			<cheat>false</cheat>
+			<chat>false</chat>
+			<showNickname>false</showNickname>
+			<fee>0</fee>
+			<activeTimePattern> active time pattern ,see spring cron expression
+			</activeTimePattern>
+			<enableRobot>true</enableRobot>
+			<enrollRestrict>
+				<minCoins>50</minCoins>
+				<maxCoins>500</maxCoins>
+			</enrollRestrict>
+			<enrollTicket>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</enrollTicket>
+			<reward>
+				<ranking>0</ranking>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</reward>
+		</freeTournamentConfigs>
+		<freeTournamentConfigs>
+			<roomId>10001</roomId>
+			<roomName>风光无限</roomName>
+			<base>10</base>
+			<cheat>false</cheat>
+			<chat>false</chat>
+			<showNickname>false</showNickname>
+			<fee>0</fee>
+			<activeTimePattern> active time pattern ,see spring cron expression
+			</activeTimePattern>
+			<enableRobot>true</enableRobot>
+			<enrollRestrict>
+				<minCoins>500</minCoins>
+				<maxCoins>1000</maxCoins>
+			</enrollRestrict>
+			<enrollTicket>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</enrollTicket>
+			<reward>
+				<ranking>0</ranking>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</reward>
+		</freeTournamentConfigs>
+		<freeTournamentConfigs>
+			<roomId>10002</roomId>
+			<roomName>平步青云</roomName>
+			<base>100</base>
+			<cheat>false</cheat>
+			<chat>false</chat>
+			<showNickname>false</showNickname>
+			<fee>0</fee>
+			<activeTimePattern> active time pattern ,see spring cron expression
+			</activeTimePattern>
+			<enableRobot>true</enableRobot>
+			<enrollRestrict>
+				<minCoins>1000</minCoins>
+				<maxCoins>10000</maxCoins>
+			</enrollRestrict>
+			<enrollTicket>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</enrollTicket>
+			<reward>
+				<ranking>0</ranking>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</reward>
+		</freeTournamentConfigs>
+		<freeTournamentConfigs>
+			<roomId>10003</roomId>
+			<roomName>一鸣惊人</roomName>
+			<base>1000</base>
+			<cheat>false</cheat>
+			<chat>false</chat>
+			<showNickname>false</showNickname>
+			<fee>0</fee>
+			<activeTimePattern> active time pattern ,see spring cron expression
+			</activeTimePattern>
+			<enableRobot>false</enableRobot>
+			<enrollRestrict>
+				<minCoins>10000</minCoins>
+				<maxCoins>100000</maxCoins>
+			</enrollRestrict>
+			<enrollTicket>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</enrollTicket>
+			<reward>
+				<ranking>0</ranking>
+				<itemId>0</itemId>
+				<itemAmount>1</itemAmount>
+			</reward>
+		</freeTournamentConfigs>
+	</freeTournamentConfigs>
+	<etType>2</etType>
+	<etDescription>淘汰赛</etDescription>
+	<etEliminationTournamentConfigs>
+		<etEliminationTournamentConfigs>
+			<roomId>room id</roomId>
+			<roomName>免费新手赛</roomName>
+			<tournamentDescription>新手赛</tournamentDescription>
+			<timePattern>
+				<clientShow>
+					<!-- 2015-02-01 -->
+					<start>* * * 01 02 * 2015</start>
+					<!-- 2015-03-01 -->
+					<end>* * * 01 03 * 2015</end>
+				</clientShow>
+				<enroll>
+					<!-- 8:00 -->
+					<start>* * 8 * * *</start>
+					<!-- 21:00 -->
+					<end>* * 21 * * *</end>
+				</enroll>
+				<match>
+					<!--  every 5 minutes. -->
+					<start>0/5 * * * *</start>
+					<!--  before x minutes stop the enroll -->
+					<end>1</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>12</minPlayerNumber>
+				<maxPlayerNumber>12</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>初赛</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>5</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>5</baseIncreaseAmount>
+				<eliminationScore>800</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>9
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>9</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<aStageScorePercent>15</aStageScorePercent>
+				<maxScoreFromAStage>800</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>3</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<bStageScorePercent>10</bStageScorePercent>
+				<maxScoreFromBStage>200</maxScoreFromBStage>
+				<base>10</base>
+				<gamePerRound>3</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>3
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>100</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>20</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>10000</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>1</ranking>
+					<itemId>0</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>2-3</ranking>
+					<itemId>0</itemId>
+					<itemAmount>100</itemAmount>
+				</rewards>
+			</rewards>
+		</etEliminationTournamentConfigs>
+		
+	</etEliminationTournamentConfigs>
+	<vipType>3</vipType>
+	<vipDescription></vipDescription>
+	<vipEliminationTournamentConfigs>
+		<vipEliminationTournamentConfigs>
+			<roomId>room id</roomId>
+			<roomName>room name </roomName>
+			<tournamentDescription> room description.</tournamentDescription>
+			<timePattern>
+				<clientShow>
+					<start>client show</start>
+					<end>client disappear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+				<match>
+					<start>match start</start>
+					<end>match end</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>6</minPlayerNumber>
+				<maxPlayerNumber>12</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>primary stage</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>5</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>5</baseIncreaseAmount>
+				<eliminationScore>800</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>20
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>16</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<aStageScorePercent>15</aStageScorePercent>
+				<maxScoreFromAStage>800</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>3</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<bStageScorePercent>10</bStageScorePercent>
+				<maxScoreFromBStage>200</maxScoreFromBStage>
+				<base>10</base>
+				<gamePerRound>2</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>1
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>0</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>1</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+			</rewards>
+		</vipEliminationTournamentConfigs>
+		<vipEliminationTournamentConfigs>
+			<roomId>room id</roomId>
+			<roomName>room name </roomName>
+			<tournamentDescription> room description.</tournamentDescription>
+			<timePattern>
+				<clientShow>
+					<start>client show</start>
+					<end>client disappear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+				<match>
+					<start>match start</start>
+					<end>match end</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>6</minPlayerNumber>
+				<maxPlayerNumber>12</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>primary stage</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>5</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>5</baseIncreaseAmount>
+				<eliminationScore>800</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>20
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>16</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<aStageScorePercent>15</aStageScorePercent>
+				<maxScoreFromAStage>800</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>3</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<bStageScorePercent>10</bStageScorePercent>
+				<maxScoreFromBStage>200</maxScoreFromBStage>
+				<base>10</base>
+				<gamePerRound>2</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>1
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>0</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>1</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+			</rewards>
+		</vipEliminationTournamentConfigs>
+		<vipEliminationTournamentConfigs>
+			<roomId>room id</roomId>
+			<roomName>room name </roomName>
+			<tournamentDescription> room description.</tournamentDescription>
+			<timePattern>
+				<clientShow>
+					<start>client show</start>
+					<end>client disappear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+				<match>
+					<start>match start</start>
+					<end>match end</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>6</minPlayerNumber>
+				<maxPlayerNumber>12</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>primary stage</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>5</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>5</baseIncreaseAmount>
+				<eliminationScore>800</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>20
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>16</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<aStageScorePercent>15</aStageScorePercent>
+				<maxScoreFromAStage>800</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>3</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<bStageScorePercent>10</bStageScorePercent>
+				<maxScoreFromBStage>200</maxScoreFromBStage>
+				<base>10</base>
+				<gamePerRound>2</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>1
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>0</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>1</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+			</rewards>
+		</vipEliminationTournamentConfigs>
+		<vipEliminationTournamentConfigs>
+			<roomId>room id</roomId>
+			<roomName>room name </roomName>
+			<tournamentDescription> room description.</tournamentDescription>
+			<timePattern>
+				<clientShow>
+					<start>client show</start>
+					<end>client disappear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+				<match>
+					<start>match start</start>
+					<end>match end</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>6</minPlayerNumber>
+				<maxPlayerNumber>12</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>primary stage</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>5</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>5</baseIncreaseAmount>
+				<eliminationScore>800</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>20
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>16</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<aStageScorePercent>15</aStageScorePercent>
+				<maxScoreFromAStage>800</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>3</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<bStageScorePercent>10</bStageScorePercent>
+				<maxScoreFromBStage>200</maxScoreFromBStage>
+				<base>10</base>
+				<gamePerRound>2</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>1
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>0</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>1</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+			</rewards>
+		</vipEliminationTournamentConfigs>
+		<vipEliminationTournamentConfigs>
+			<roomId>room id</roomId>
+			<roomName>room name </roomName>
+			<tournamentDescription> room description.</tournamentDescription>
+			<timePattern>
+				<clientShow>
+					<start>client show</start>
+					<end>client disappear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+				<match>
+					<start>match start</start>
+					<end>match end</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>6</minPlayerNumber>
+				<maxPlayerNumber>12</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>primary stage</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>5</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>5</baseIncreaseAmount>
+				<eliminationScore>800</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>20
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>16</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<aStageScorePercent>15</aStageScorePercent>
+				<maxScoreFromAStage>800</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>3</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<bStageScorePercent>10</bStageScorePercent>
+				<maxScoreFromBStage>200</maxScoreFromBStage>
+				<base>10</base>
+				<gamePerRound>2</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>1
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>0</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>1</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+			</rewards>
+		</vipEliminationTournamentConfigs>
+	</vipEliminationTournamentConfigs>
+	<btType>4</btType>
+	<btDescription></btDescription>
+	<blockadeTournamentConfigs>
+		<blockadeTournamentConfigs>
+			<roomId> blocked room id</roomId>
+			<roomName>blocked room name</roomName>
+			<tournamentDescription>blocked description</tournamentDescription>
+			<timeController>
+				<clientShow>
+					<start>client show</start>
+					<end>client dissapear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+			</timeController>
+			<enrollRestrict>
+				<enrollTimesPerDay>10</enrollTimesPerDay>
+				<differentLevelPK>true</differentLevelPK>
+			</enrollRestrict>
+			<stages>
+				<stages>
+					<id>1</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>2</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>3</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>4</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>5</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+			</stages>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+		</blockadeTournamentConfigs>
+		<blockadeTournamentConfigs>
+			<roomId> blocked room id</roomId>
+			<roomName>blocked room name</roomName>
+			<tournamentDescription>blocked description</tournamentDescription>
+			<timeController>
+				<clientShow>
+					<start>client show</start>
+					<end>client dissapear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+			</timeController>
+			<enrollRestrict>
+				<enrollTimesPerDay>10</enrollTimesPerDay>
+				<differentLevelPK>true</differentLevelPK>
+			</enrollRestrict>
+			<stages>
+				<stages>
+					<id>1</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>2</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>3</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>4</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>5</id>
+					<minIntegeral>1000</minIntegeral>
+					<match>
+						<start>match start</start>
+						<end>match end</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>100</itemAmount>
+					</reward>
+				</stages>
+			</stages>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+		</blockadeTournamentConfigs>
+	</blockadeTournamentConfigs>
+</LLGameTournamentConfig>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_sky_game_manager_remote_activerecord_UserBank" modelAttribute="userBank" path="/userbanks" versionField="none" z="086EA070932uMjxmgp3EABMQDGs=">
+        <field:select field="userAccountId" id="c_com_sky_game_manager_remote_activerecord_UserBank_userAccountId" itemValue="id" items="${useraccounts}" path="/useraccounts" z="8o0f2LKm+yikFIMw39zdbqfRNUA="/>
+        <field:datetime dateTimePattern="${userBank_loandate_date_format}" field="loanDate" id="c_com_sky_game_manager_remote_activerecord_UserBank_loanDate" required="true" z="nbAL5MPm5Tpi0RROLY63g+Nus44="/>
+        <field:datetime dateTimePattern="${userBank_refunddate_date_format}" field="refundDate" id="c_com_sky_game_manager_remote_activerecord_UserBank_refundDate" required="true" z="cMCyBs0g+NmwMoQW5a6OwuUaiAs="/>
+        <field:input field="deposit" id="c_com_sky_game_manager_remote_activerecord_UserBank_deposit" validationMessageCode="field_invalid_integer" z="ZPi2r833D5X4px6+n1sNUqgmTBE="/>
+        <field:input field="loan" id="c_com_sky_game_manager_remote_activerecord_UserBank_loan" validationMessageCode="field_invalid_integer" z="42wAfu5+eYZ7gQl66keOnp5Mqxo="/>
+        <field:input field="bankPw" id="c_com_sky_game_manager_remote_activerecord_UserBank_bankPw" z="PUVSkksU2JnRuVVgdiNoR43KsyQ="/>
+        <field:input field="repayment" id="c_com_sky_game_manager_remote_activerecord_UserBank_repayment" validationMessageCode="field_invalid_integer" z="uS1aZ2ri8KUX6rN5asxoeZ7kieE="/>
+    </form:update>
+</div>

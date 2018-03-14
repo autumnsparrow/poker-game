@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sky_game_manager_activerecord_UserActiveDayliyStatics" object="${useractivedayliystatics}" path="/manager/userActiveDaylies" z="JsFBvsNxe4GgUefVZIuypDaICss=">
+        <field:display field="day2Active" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day2Active" object="${useractivedayliystatics}" z="x44Ih9kq+gAym+9QmA+k1BHBzaE="/>
+        <field:display field="day3Active" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day3Active" object="${useractivedayliystatics}" z="BTWukrueILPl8+Mz7NzCKsUQQAY="/>
+        <field:display field="day7Active" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day7Active" object="${useractivedayliystatics}" z="UVEIfAr3wtMx2lypg9zL4/Qw14s="/>
+        <field:display field="day30Active" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day30Active" object="${useractivedayliystatics}" z="v7wX8L2GUGLtHCHBYz3yIg1WUuI="/>
+        <field:display field="day2ActiveV" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day2ActiveV" object="${useractivedayliystatics}" z="UYTYVT+O0RlcBsPKIBwZ9meSnNY="/>
+        <field:display field="day3ActiveV" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day3ActiveV" object="${useractivedayliystatics}" z="bU/6nZT8kZ92Nj/4NugC/M8ANR4="/>
+        <field:display field="day7ActiveV" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day7ActiveV" object="${useractivedayliystatics}" z="Sfs3S0ybmQPhm/FGz/9I05VRAt4="/>
+        <field:display field="day30ActiveV" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day30ActiveV" object="${useractivedayliystatics}" z="9ET8CwVcPfy728TClc5DRctkCzw="/>
+        <field:display field="chargeMoneyAmount" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_chargeMoneyAmount" object="${useractivedayliystatics}" z="PF2bhlJVp4riPk4MzpiZdTuOdTY="/>
+        <field:display date="true" dateTimePattern="${userActiveDayliyStatics_staticsdate_date_format}" field="staticsDate" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_staticsDate" object="${useractivedayliystatics}" z="zwzxoioM7f565/DAO+ZI9Epd/N4="/>
+        <field:display field="channelId" id="s_com_sky_game_manager_activerecord_UserActiveDayliyStatics_channelId" object="${useractivedayliystatics}" z="aKkKnudb1pV/EB8Qvq3PkVjeDn8="/>
+    </page:show>
+</div>

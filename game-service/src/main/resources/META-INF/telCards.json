@@ -1,0 +1,7 @@
+{"telCard":[{"id":3001,"value":1,"description":"可兑换1元移动手机充值卡一张","iconImg":""},
+ {"id":3002,"value":5,"description":"可兑换5元移动手机充值卡一张","iconImg":""},
+ {"id":3003,"value":10,"description":"可兑换10元移动手机充值卡一张","iconImg":""},
+ {"id":3004,"value":50,"description":"可兑换50元移动手机充值卡一张","iconImg":""},
+ {"id":3005,"value":100,"description":"可兑换100元移动手机充值卡一张","iconImg":""},
+ {"id":3006,"value":200,"description":"可兑换200元移动手机充值卡一张","iconImg":""},
+ {"id":3007,"value":500,"description":"可兑换500元移动手机充值卡一张","iconImg":""}]}

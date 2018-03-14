@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_sky_game_jmx_JmxRoom" modelAttribute="jmxRoom" path="/jmx/room" versionField="Version" z="uzMdAg27Vs/vonpi0EKL4BYkBXM=">
+        <field:input field="channelId" id="c_com_sky_game_jmx_JmxRoom_channelId" validationMessageCode="field_invalid_integer" z="puEYipu8MqduyQK/tusIR1B/V8I="/>
+        <field:input field="roomId" id="c_com_sky_game_jmx_JmxRoom_roomId" validationMessageCode="field_invalid_integer" z="AJnfdNy0RNCGTqrY1b9l00CuQU4="/>
+        <field:checkbox field="vip" id="c_com_sky_game_jmx_JmxRoom_vip" z="6/LLsPVsfG7rFTnFHX842rlRK1c="/>
+        <field:input field="content" id="c_com_sky_game_jmx_JmxRoom_content" z="W7y42iV6s1cvNms6nxQnc9ChuS4="/>
+    </form:update>
+</div>

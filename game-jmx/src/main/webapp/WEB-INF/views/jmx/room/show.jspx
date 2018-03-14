@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sky_game_jmx_JmxRoom" object="${jmxroom}" path="/jmx/room" z="WfQ0eNMZc2ZvQlLvAxJxOnhv3bU=">
+       <!--   <field:display field="content" id="s_com_sky_game_jmx_JmxRoom_content" object="${jmxroom}" z="vznC2l4RoxiKNkUlFT/wQYVlnz4="/>
+    	 -->
+    	
+    	<a href="${jmxroom.content}">${jmxroom.roomId}</a>
+    </page:show>
+</div>

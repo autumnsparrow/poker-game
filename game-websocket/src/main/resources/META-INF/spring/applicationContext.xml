@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	 <context:property-placeholder location="classpath*:/META-INF/spring/debug-*.properties"/>
+	 
+	 <!-- <context:property-placeholder location="classpath*:/META-INF/spring/release-*.properties" /> -->
+
+	
+
+
+	
+	
+	<context:component-scan base-package="com.sky.game.websocket.handler" /> 
+	  <!--  configure the remote service -->
+	<!--  start the game-context  -->
+	<bean id="serviceStartup"
+		class="com.sky.game.context.service.ServerStarupService"
+		init-method="init" scope="singleton"
+		depends-on="iceServiceConfigLoader">
+    </bean>
+	<bean id="iceServiceConfigLoader"
+		class="com.sky.game.context.configuration.ice.IceServiceConfigLoader"
+		init-method="init">
+	</bean>
+	
+	<bean id="remoteServiceScannerConfigurer"
+		class="com.sky.game.context.spring.RemoteServiceScannerConfigurer">
+		<!-- <property name="basePackage" value="com.sky.game.internal.service">
+		</property> -->
+	</bean>
+	
+</beans>

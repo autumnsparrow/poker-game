@@ -1,0 +1,13 @@
+
+--This line, and those below, will be ignored--
+
+A    src/main/java/com/sky/game/service/logic/ItemService.java
+M    src/main/mybatis/com/sky/game/service/persistence/ItemMapper.java
+A    src/main/mybatis/com/sky/game/service/persistence/IconMapper.java
+M    src/main/mybatis/com/sky/game/service/domain/UserToken.java
+A    src/main/mybatis/com/sky/game/service/domain/Icon.java
+M    src/main/mybatis/com/sky/game/service/domain/Item.java
+M    src/main/resources/generatorConfig.xml
+A    src/main/resources/com/sky/game/service/persistence/IconMapper.xml
+M    src/main/resources/com/sky/game/service/persistence/ItemMapper.xml
+M    src/main/resources/com/sky/game/service/persistence/FlagMapper.xml

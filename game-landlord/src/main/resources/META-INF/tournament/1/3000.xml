@@ -1,0 +1,86 @@
+<EliminationTournamentConfig>
+			<roomId>3000</roomId>
+			<roomName>room name </roomName>
+			<tournamentDescription> room description.</tournamentDescription>
+		
+			<timePattern>
+				<clientShow>
+					<start>client show</start>
+					<end>client disappear</end>
+				</clientShow>
+				<enroll>
+					<start>enroll start</start>
+					<end>enroll end</end>
+				</enroll>
+				<match>
+					<start>0/5 * * * * *</start>
+					<end>2</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>6</minPlayerNumber>
+				<maxPlayerNumber>12</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>primary stage</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>5</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>5</baseIncreaseAmount>
+				<eliminationScore>800</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>20
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>16</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<aStageScorePercent>15</aStageScorePercent>
+				<maxScoreFromAStage>800</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>3</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<bStageScorePercent>10</bStageScorePercent>
+				<maxScoreFromBStage>200</maxScoreFromBStage>
+				<base>10</base>
+				<gamePerRound>2</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>1
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>2000</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>1</itemId>
+					<itemAmount>4000</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>0</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>0</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>ranking</ranking>
+					<itemId>1</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+			</rewards>
+			
+			<deckConfig>
+		<winExp>50</winExp>
+		<loseExp>10</loseExp>
+		<firstCallRandom>true</firstCallRandom>
+		<bidWaitingTime>10000</bidWaitingTime>
+		<robotBidWaitingTime>10</robotBidWaitingTime>
+		<kickWaitingTime>10000</kickWaitingTime>
+		<robotKickWaitingTime>10</robotKickWaitingTime>
+		<pullWaitingTime>10000</pullWaitingTime>
+		<robotPullWaitingTime>10</robotPullWaitingTime>
+		<showHandWaitingTime>60000</showHandWaitingTime>
+		<robotShowHandWaitingTime>10</robotShowHandWaitingTime>
+	</deckConfig>
+		</EliminationTournamentConfig>

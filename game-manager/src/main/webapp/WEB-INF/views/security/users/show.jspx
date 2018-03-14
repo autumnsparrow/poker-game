@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sky_game_manager_model_security_Principal" object="${principal}" path="/security/users" z="D1EBJQgeIw21YcW4ZxEpLF5rUyg=">
+        <field:display field="username" id="s_com_sky_game_manager_model_security_Principal_username" object="${principal}" z="rNrFm5ZX/Pd3tDg4yCxc+OL4jho="/>
+        <field:display field="password" id="s_com_sky_game_manager_model_security_Principal_password" object="${principal}" z="BR8kHxbohcTAsVE9ZjTF34MVFY0="/>
+        <field:display field="enabled" id="s_com_sky_game_manager_model_security_Principal_enabled" object="${principal}" z="MB/nOj7xzhkmt0SIp0z4/qIJF2o="/>
+    </page:show>
+</div>

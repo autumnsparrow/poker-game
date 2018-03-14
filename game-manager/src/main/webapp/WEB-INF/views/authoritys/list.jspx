@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sky_game_manager_model_security_Authority" items="${authoritys}" z="L45ASUMgJdfIxo8sOxeIewF6CSg=">
+        <table:table data="${authoritys}" id="l_com_sky_game_manager_model_security_Authority" path="/authoritys" z="VbO96u1JCBEZGxgEwlbS3JFf9tI=">
+            <table:column id="c_com_sky_game_manager_model_security_Authority_roleId" property="roleId" z="NH3jBhgdE0eI/LK55aSztA8tJtU="/>
+            <table:column id="c_com_sky_game_manager_model_security_Authority_authority" property="authority" z="wAfrjnZKlCFdWObjJ277f7f+jzk="/>
+            <table:column id="c_com_sky_game_manager_model_security_Authority_username" property="username" z="3itZ43WXrtZirp7OHdvgD8ujPZg="/>
+        </table:table>
+    </page:list>
+</div>

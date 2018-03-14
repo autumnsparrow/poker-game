@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sky_game_manager_remote_activerecord_UserBank" items="${userbanks}" z="X61Rs/W96U/PIkfPZ/+y8QHGxTs=">
+        <table:table data="${userbanks}" id="l_com_sky_game_manager_remote_activerecord_UserBank" path="/userbanks" z="nkR9N5Icc2WaYuoghf8aw+fo8pw=">
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserBank_userAccountId" property="userAccountId" z="EvsI70QhvmJN/G/rHnONGIi+67E="/>
+            <table:column calendar="true" dateTimePattern="${userBank_loandate_date_format}" id="c_com_sky_game_manager_remote_activerecord_UserBank_loanDate" property="loanDate" z="61psCSchnJ3VUT8++C0LwyHC0Iw="/>
+            <table:column calendar="true" dateTimePattern="${userBank_refunddate_date_format}" id="c_com_sky_game_manager_remote_activerecord_UserBank_refundDate" property="refundDate" z="C0gHdw/kBW7ERb2BaqAJ0ZABc00="/>
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserBank_deposit" property="deposit" z="K0lMgdtUow97N+YoNYSZS6EIAeg="/>
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserBank_loan" property="loan" z="jYqrpG3J1QqwFYgo47WKpHRkIpo="/>
+            <table:column id="c_com_sky_game_manager_remote_activerecord_UserBank_bankPw" property="bankPw" z="YKVuRec0pTHNIZc8YKRtdZhH4jY="/>
+        </table:table>
+    </page:list>
+</div>

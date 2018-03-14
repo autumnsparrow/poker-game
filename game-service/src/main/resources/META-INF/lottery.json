@@ -1,0 +1,10 @@
+[ 
+{"id":1,"name":"10000金币","itemId":1001,"value":10000,"odds":0,"iconImg":"shop_gold1.png"},
+{"id":2,"name":"1000金币","itemId":1001,"value":1000,"odds":0,"iconImg":"shop_gold1.png"},
+{"id":3,"name":"10金币","itemId":1001,"value":10,"odds":40,"iconImg":"shop_gold1.png"},
+{"id":4,"name":"100金币","itemId":1001,"value":100,"odds":80,"iconImg":"shop_gold2.png"},
+{"id":5,"name":"1元宝","itemId":1002,"value":1,"odds":85,"iconImg":"yuanbao.png"},
+{"id":6,"name":"200金币","itemId":1001,"value":200,"odds":90,"iconImg":"shop_gold3.png"},
+{"id":7,"name":"绿宝石","itemId":2500,"value":1,"odds":95,"iconImg":"lvbaoshi.png"},
+{"id":8,"name":"500金币","itemId":1001,"value":500,"odds":100,"iconImg":"shop_gold3.png"}
+]

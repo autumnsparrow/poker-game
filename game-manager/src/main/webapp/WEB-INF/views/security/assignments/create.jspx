@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_sky_game_manager_model_security_AuthorityPrincipalAssignment" modelAttribute="authorityPrincipalAssignment" path="/security/assignments" render="${empty dependencies}" z="WdadPFxUI8buZdMgS9zbxEjTqh0=">
+        <field:select field="username" id="c_com_sky_game_manager_model_security_AuthorityPrincipalAssignment_username" itemValue="id" items="${principals}" path="/security/users" z="fYmW+IPS89QWk1rG0OdxCv3chZs="/>
+        <field:select field="roleId" id="c_com_sky_game_manager_model_security_AuthorityPrincipalAssignment_roleId" itemValue="id" items="${authoritys}" path="/security/roles" z="0JRYU7BM8utEaJhlFDE7E8kiop8="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_sky_game_manager_model_security_AuthorityPrincipalAssignment" render="${not empty dependencies}" z="88UcYp7Wiz1yagd939Y+P7dllhk="/>
+</div>

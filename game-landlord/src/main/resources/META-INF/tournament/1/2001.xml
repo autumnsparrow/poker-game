@@ -1,0 +1,123 @@
+﻿<EliminationTournamentConfig>
+			<roomId>2001</roomId>
+			<roomName>100金币赚金赛</roomName>
+			<tournamentDescription>100金币入场，满48人开赛，游戏分初赛、预赛、决赛三个阶段，进入预赛即可获得金币奖励</tournamentDescription>
+			<tournamentType>1</tournamentType>
+			<enableRobot>true</enableRobot>
+			<taskId>1</taskId>
+		
+			<timePattern>
+				<clientShow>
+					<!-- 2015-02-01 -->
+					<start>0 0/2 * * * * *</start>
+					<!-- 2015-03-01 -->
+					<end>0 5 * * * * *</end>
+				</clientShow>
+				<enroll>
+					<!-- 8:00 -->
+					<start>* * 8 * * *</start>
+					<!-- 21:00 -->
+					<end>* * 23 * * *</end>
+				</enroll>
+				<match>
+					<!--  every 5 minutes. -->
+					<start></start>
+					<!--  before x minutes stop the enroll -->
+					<end>1</end>
+				</match>
+			</timePattern>
+			<playerNumberControl>
+				<minPlayerNumber>48</minPlayerNumber>
+				<maxPlayerNumber>48</maxPlayerNumber>
+			</playerNumberControl>
+			<aStage>
+				<name>初赛</name>
+				<base>1000</base>
+				<baseIncreaseTimeInterval>10</baseIncreaseTimeInterval>
+				<baseIncreaseAmount>100</baseIncreaseAmount>
+				<gamePerDeck>1</gamePerDeck>
+				<eliminationScore>6000</eliminationScore>
+				<eliminationByScoreStoppedPlayerNumbers>30
+				</eliminationByScoreStoppedPlayerNumbers>
+				<upgradedPlayerNumbers>24</upgradedPlayerNumbers>
+			</aStage>
+			<bStage>
+				<name>预赛</name>
+				<aStageScorePercent>10</aStageScorePercent>
+				<integral>2000</integral>
+				<maxScoreFromAStage>5000</maxScoreFromAStage>
+				<base>100</base>
+				<gameRoundPerDeck>3</gameRoundPerDeck>
+				<rank2UpradePlayerNumbers>4</rank2UpradePlayerNumbers>
+			</bStage>
+			<cStage>
+				<name>决赛</name>
+				<bStageScorePercent>10</bStageScorePercent>
+				<integral>2000</integral>
+				<maxScoreFromBStage>1500</maxScoreFromBStage>
+				<base>100</base>
+				<gamePerDeck>3</gamePerDeck>
+				<gamePerRound>2</gamePerRound>
+				<eliminationPerRoundPlayerNumbers>3
+				</eliminationPerRoundPlayerNumbers>
+			</cStage>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>1001</itemId>
+					<itemAmount>100</itemAmount>
+				</enrollTickets>
+				<enrollTickets>
+					<itemId>2500</itemId>
+					<itemAmount>1</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>15000</initIntegral>
+			<rewards>
+				<rewards>
+					<ranking>1</ranking>
+					<itemId>1001</itemId>
+					<itemAmount>1000</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>2</ranking>
+					<itemId>1001</itemId>
+					<itemAmount>500</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>3</ranking>
+					<itemId>1001</itemId>
+					<itemAmount>400</itemAmount>
+				</rewards>
+				
+				<rewards>
+					<ranking>4-10</ranking>
+					<itemId>1001</itemId>
+					<itemAmount>200</itemAmount>
+				</rewards>
+				
+				<rewards>
+					<ranking>11-16</ranking>
+					<itemId>1001</itemId>
+					<itemAmount>100</itemAmount>
+				</rewards>
+				<rewards>
+					<ranking>17-24</ranking>
+					<itemId>1001</itemId>
+					<itemAmount>50</itemAmount>
+				</rewards>
+			</rewards>
+			
+		<deckConfig>
+		<winExp>20</winExp>
+		<loseExp>5</loseExp>
+		<firstCallRandom>true</firstCallRandom>
+		<bidWaitingTime>10000</bidWaitingTime>
+		<kickWaitingTime>10000</kickWaitingTime>
+		<pullWaitingTime>10000</pullWaitingTime>
+		<showHandWaitingTime>30000</showHandWaitingTime>
+		<robotBidWaitingTime>4000</robotBidWaitingTime>
+		<robotKickWaitingTime>4000</robotKickWaitingTime>
+		<robotPullWaitingTime>4000</robotPullWaitingTime>
+		<robotShowHandWaitingTime>10</robotShowHandWaitingTime>
+	</deckConfig>
+</EliminationTournamentConfig>

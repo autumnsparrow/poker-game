@@ -1,0 +1,134 @@
+<BlockadeTournamentConfig>
+			<roomId>4000</roomId>
+			<roomName>免费闯关赢金币</roomName>
+			<tournamentDescription>入场可得100积分，积分满足过关条件进入下一关次，积分不足，按照积分掉至相应关次。</tournamentDescription>
+			<enableRobot>true</enableRobot>
+			
+			<timeController>
+				<clientShow>
+					<start>0 0/2 * * * * *</start>
+					<end>0 5 * * * * *</end>
+				</clientShow>
+				<enroll>
+					<start>* * 8 * * *</start>
+					<end>* * 23 * * *</end>
+				</enroll>
+			</timeController>
+			<enrollRestrict>
+				<enrollTimesPerDay>20</enrollTimesPerDay>
+				<differentLevelPK>true</differentLevelPK>
+			</enrollRestrict>
+			<stages>
+				<stages>
+					<id>1</id>
+					<minIntegeral>0</minIntegeral>
+					<enableExchange>false</enableExchange>
+					<base>10</base>
+					<match>
+						<start>* * 8 * * *</start>
+						<end>* * 23 * * *</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>1001</itemId>
+						<itemAmount>10</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>2</id>
+					<base>50</base>
+					<minIntegeral>500</minIntegeral>
+					<enableExchange>true</enableExchange>
+					<match>
+						<start>* * 8 * * *</start>
+						<end>* * 23 * * *</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>1001</itemId>
+						<itemAmount>50</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>3</id>
+					<base>100</base>
+					<minIntegeral>1000</minIntegeral>
+					<enableExchange>true</enableExchange>
+					<match>
+						<start>* * 8 * * *</start>
+						<end>* * 23 * * *</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>2500</itemId>
+						<itemAmount>1</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>4</id>
+					<base>300</base>
+					<minIntegeral>3000</minIntegeral>
+					<enableExchange>true</enableExchange>
+					<match>
+						<start>* * 8 * * *</start>
+						<end>* * 23 * * *</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>2502</itemId>
+						<itemAmount>1</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>5</id>
+					<base>900</base>
+					<minIntegeral>9000</minIntegeral>
+					<enableExchange>true</enableExchange>
+					<match>
+						<start>* * 8 * * *</start>
+						<end>* * 23 * * *</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>1001</itemId>
+						<itemAmount>2000</itemAmount>
+					</reward>
+				</stages>
+				<stages>
+					<id>6</id>
+					<base>2500</base>
+					<minIntegeral>25000</minIntegeral>
+					<enableExchange>false</enableExchange>
+					<match>
+						<start>* * 8 * * *</start>
+						<end>* * 23 * * *</end>
+					</match>
+					<reward>
+						<ranking>0</ranking>
+						<itemId>0</itemId>
+						<itemAmount>0</itemAmount>
+					</reward>
+				</stages>
+			</stages>
+			<enrollTickets>
+				<enrollTickets>
+					<itemId>0</itemId>
+					<itemAmount>0</itemAmount>
+				</enrollTickets>
+			</enrollTickets>
+			<initIntegral>100</initIntegral>
+			
+			<deckConfig>
+		<winExp>20</winExp>
+		<loseExp>5</loseExp>
+		<firstCallRandom>true</firstCallRandom>
+		<bidWaitingTime>10000</bidWaitingTime>
+		<robotBidWaitingTime>10</robotBidWaitingTime>
+		<kickWaitingTime>10000</kickWaitingTime>
+		<robotKickWaitingTime>10</robotKickWaitingTime>
+		<pullWaitingTime>10000</pullWaitingTime>
+		<robotPullWaitingTime>10</robotPullWaitingTime>
+		<showHandWaitingTime>60000</showHandWaitingTime>
+		<robotShowHandWaitingTime>10</robotShowHandWaitingTime>
+	</deckConfig>
+		</BlockadeTournamentConfig>

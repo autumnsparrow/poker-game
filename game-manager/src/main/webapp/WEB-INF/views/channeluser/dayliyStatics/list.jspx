@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sky_game_manager_activerecord_UserActiveDayliyStatics" items="${useractivedayliystaticses}" z="GeP9b3m7urwgMbrKR8HOtghe/AM=">
+        <table:table data="${useractivedayliystaticses}" id="l_com_sky_game_manager_activerecord_UserActiveDayliyStatics" path="/channeluser/dayliyStatics" z="sEUeQJHWgIsXFFdG+JJwdYIJw+M=">
+            <table:column id="c_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day2Active" property="day2Active" z="8Ds9DJjBasL4ESgNkwo+rg8XLog="/>
+            <table:column id="c_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day3Active" property="day3Active" z="8pNxJD504gPAAypgiec5j9ChTp4="/>
+            <table:column id="c_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day7Active" property="day7Active" z="+CrxNoh6vHWzQ+oKB1UqYpAARQ4="/>
+            <table:column id="c_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day30Active" property="day30Active" z="jTYMDAnLMsgI2x+iYfFZNFsK3TM="/>
+            <table:column id="c_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day2ActiveV" property="day2ActiveV" z="y6nzizex15akqy6e+iptsQXw72k="/>
+            <table:column id="c_com_sky_game_manager_activerecord_UserActiveDayliyStatics_day3ActiveV" property="day3ActiveV" z="WtFresXlQQUpJHPK0jUzGbQOD90="/>
+        </table:table>
+    </page:list>
+</div>

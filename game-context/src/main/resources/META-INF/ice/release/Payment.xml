@@ -1,0 +1,19 @@
+<Configuration xmlns="">
+	<name>Payment</name>
+	<ip>127.0.0.1</ip>
+	<port>18000</port>
+	<sync>
+		<locators></locators>
+	</sync>
+	<async>
+		<locators></locators>
+	</async>
+	<remote>
+		<locators>
+			<locator>
+				<service>Protocol</service>
+				<ns>com.sky.game.internal.service.payment.upmp</ns>
+			</locator>
+		</locators>
+	</remote>
+</Configuration>

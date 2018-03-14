@@ -1,0 +1,341 @@
+use sky_texas;
+=============================用户相关表=======================================
+
+create table SEQUENCE(
+		 SEQ_NAME varchar(50),
+		 SEQ_COUNT bigint,primary key(SEQ_NAME)
+ )engine=InnoDB default charset=utf8;
+
+ CREATE TABLE `user_account` (
+		  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+		  `name` varchar(50) NOT NULL,
+		  `nick_name` varchar(50) DEFAULT NULL,
+		  `user_password` varchar(128) DEFAULT NULL,
+		  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		  `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+		  `user_type` int(11) DEFAULT NULL,
+		  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
+
+
+create table icon(
+		id bigint auto_increment,
+		url varchar(100),
+		primary key(id)
+)engine=InnoDb default charset=utf8;
+
+create table property(
+		id bigint auto_increment,
+		name varchar(50) not null,
+		description varchar(256) not null,
+		icon_id bigint,
+		primary key(id),
+		constraint FK_PROPERTY_ICON_ID foreign key(icon_id) references icon(id)
+)engine=InnoDb default charset=utf8;
+
+insert into property (name,description) values('exp','user exp'),('logo','user logo'),('phone','user phone');
+
+create table user_extra(
+		id bigint auto_increment,
+		user_account_id bigint,
+		property_id bigint,
+		property_value varchar(256),
+		primary key(id),
+		constraint FK_UE_USER_ID foreign key (user_account_id) references user_account(id),
+		constraint FK_UE_PROPERTY_ID foreign key (property_id) references property(id)
+	
+)engine=InnoDb default charset=utf8;
+
+create table user_properties_log(
+		id bigint auto_increment,
+		user_account_id bigint,
+		property_id bigint,
+		property_value varchar(256),
+		current_property_value varchar(256),
+		update_time timestamp default current_timestamp,
+		primary key(id),
+		constraint FK_UPL_USER_ID foreign key (user_account_id) references user_account(id),
+		constraint FK_UPL_PROPERTY_ID foreign key (property_id) references property(id)
+)engine=InnoDb default charset=utf8;
+
+ insert into SEQUENCE(SEQ_NAME,SEQ_COUNT) values('user_account_id',1000);
+
+=================== 2014-10-14=============
+create table user_address(
+	    id bigint auto_increment,
+	    user_account_id bigint,
+	    postcode int(11),
+	    address  varchar(256),
+	    primary key(id),
+	    constraint FK_UA_USER_ID foreign key (user_account_id) references user_account(id)
+)engine=InnoDb default charset=utf8;
+
+create table item(
+	     id bigint auto_increment,
+	     name varchar(50),
+	     description varchar(256),
+	     icon_id bigint,
+	     item_type int(11),
+	     primary key(id),
+	     constraint FK_II foreign key (icon_id) references icon(id)
+)engine=InnoDb default charset=utf8;
+create table user_items(
+	    id bigint auto_increment,
+	    user_account_id bigint,
+	    item_id bigint,
+	    item_value int(11),
+	    primary key(id),
+	    constraint Fk_UI_USER_ID foreign key(user_account_id) references user_account(id),
+	    constraint Fk_UI_ITEM_ID foreign key(item_id) references item(id)
+)engine=InnoDb default charset=utf8;
+create table user_item_log(
+      id bigint auto_increment,
+      user_account_id bigint,
+      item_id bigint,
+      item_value int(11),
+      value int(11),
+      updateTime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      primary key(id),
+      constraint FK_UIL_USER_ID foreign key(user_account_id) references user_account(id),
+      constraint FK_UIL_ITEM_ID foreign key (item_id) references item(id)
+)engine=InnoDb default charset=utf8;
+ 
+create table user_deposit_box(
+       id bigint auto_increment,
+       user_account_id bigint,
+       item_id bigint,
+       item_value int(11),
+       primary key(id),
+       constraint FK_UDB_USER_ID foreign key(user_account_id) references user_account(id),
+       constraint FK_UDB_ITEM_ID foreign key (item_id) references item(id)
+)engine=InnoDb default charset=utf8;
+
+create table token(
+        id bigint auto_increment,
+        user_account_id bigint,
+        token_alive int(11),
+        primary key(id),
+        constraint FK_TOKEN_USER_ACCOUNT_ID foreign key(user_account_id) references user_account(id)
+)engine=InnoDb default charset=utf8;
+
+=================================成就相关表======================================
+
+create table reward(
+       id bigint NOT NULL AUTO_INCREMENT,
+       reward_value int(11),
+       reward_type int(11),
+       primary key(id)
+)engine=InnoDb default charset=utf8;
+
+create table achievement(
+        id bigint auto_increment,
+        name varchar(50),
+        description varchar(256),
+        min_value bigint,
+        icon_id bigint,
+        reward_id bigint,
+        primary key(id),
+        constraint FK_A_ICON_ID foreign key (icon_id) references icon (id),
+        constraint FK_A_REWARD_ID foreign key (reward_id) references reward(id)
+)engine=InnoDb default charset=utf8;
+create table user_achievement(
+        id bigint auto_increment,
+        user_account_id bigint,
+        achievement_id bigint,
+        value int(11),
+        state int(11),
+        primary key(id),
+        constraint FK_UA_USER_ACCOUNT_ID foreign key(user_account_id) references user_account(id),
+        constraint FK_UA_ACHIEVEMENT_ID foreign key(achievement_id) references achievement(id)
+)engine=InnoDb default charset=utf8;
+create table user_reward(
+        id bigint NOT NULL AUTO_INCREMENT,
+        user_account_id bigint,
+        reward_id bigint,
+        state int(11),
+        primary key(id),
+        constraint FK_UR_USER_ACCOUNT_ID foreign key(user_account_id) references user_account(id),
+        constraint FK_UR_REWARD_ID foreign key(reward_id) references reward(id)
+)engine=InnoDb default charset=utf8;
+==============================购买相关表===================================
+create table store(
+        id bigint NOT NULL AUTO_INCREMENT,
+        item_id bigint,
+        total_count bigint,
+        expire_time timestamp,
+        effective_time timestamp,
+        price int(11),
+        pay_type int(11),
+        primary key(id),
+        constraint FK_S_ITEM_ID foreign key(item_id) references item(id)
+)engine=InnoDb default charset=utf8;
+create table store_trade_log(
+        id bigint NOT NULL AUTO_INCREMENT,
+        user_account_id bigint,
+        store_id bigint,
+        count bigint,
+        total_count bigint,
+        update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        primary key(id),
+        constraint FK_STL_USER_ACCOUNT_ID foreign key(user_account_id) references user_account(id),
+        constraint FK_STL_STORE_ID foreign key(store_id) references store(id)
+)engine=InnoDb default charset=utf8;
+========================对换相关表===============================
+create table exchange(
+		id bigint NOT NULL AUTO_INCREMENT,
+		item_id bigint,
+		effect_time timestamp,
+		expire_time timestamp,
+		total_count bigint,
+		from_item_id bigint,
+		from_item_count bigint,
+		primary key(id),
+		constraint FK_E_ITEM_ID foreign key (item_id) references item(id),
+		constraint FK_E_FROM_ITEM_ID foreign key (from_item_id) references item(id)
+)engine=InnoDb default charset=utf8;
+create table exchange_trade_log(
+		id bigint NOT NULL AUTO_INCREMENT,
+		exchange_id bigint,
+		user_account_id bigint,
+		total_count bigint,
+		count bigint,
+		update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		primary key(id),
+		constraint FK_ETL_EXCHANGE_ID foreign key(exchange_id) references exchange(id),
+		constraint FK_ETL_USER_ACCOUNT_ID foreign key(user_account_id) references user_account(id)
+)engine=InnoDb default charset=utf8;
+=====================用户任务相关表======================
+create table task(
+        id bigint NOT NULL AUTO_INCREMENT,
+        name varchar(50),
+        description varchar(256),
+        min_value int(11),
+        icon_id bigint,
+        reward_id bigint,
+        primary key(id),
+        constraint FK_T_ICON_ID foreign key(icon_id) references icon (id),
+        constraint FK_T_REWARD_ID foreign key(reward_id) references reward (id)
+)engine=InnoDb default charset=utf8;
+create table user_task(
+        id bigint NOT NULL AUTO_INCREMENT,
+        user_account_id bigint,
+        achievement_id bigint,
+        value bigint,
+        effect_time timestamp,
+        expire_time timestamp,
+        state int(11),
+        primary key(id),
+        constraint FK_UT_USERACCOUNT_ID foreign key(user_account_id) references user_account(id),
+        constraint FK_UT_ACHIEVEMENT_ID foreign key(achievement_id) references achievement(id)
+)engine=InnoDb default charset=utf8;
+=====================用户结算=====================
+create table item_check_out(
+        id bigint NOT NULL AUTO_INCREMENT,
+        user_item_id bigint,
+        user_address_id bigint,
+        user_extra_id bigint,
+        update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        states int(11),
+        primary key(id),
+        constraint FK_ICO_USER_ITEM_ID foreign key(user_item_id) references user_items(id),
+        constraint FK_ICO_USER_ADDRESS_ID foreign key(user_address_id) references user_address(id),
+        constraint FK_ICO_USER_EXTRA_ID foreign key(user_extra_id) references user_extra(id)
+)engine=InnoDb default charset=utf8;
+====================活动相关表=====================
+create table event(
+		 id bigint NOT NULL AUTO_INCREMENT,
+		 name varchar(50),
+		 description varchar(256),
+		 effect_time timestamp,
+		 expire_time timestamp,
+		 primary key(id)
+)engine=InnoDb default charset=utf8;
+create table event_log(
+		  id bigint NOT NULL AUTO_INCREMENT,
+		  event_id bigint,
+		  user_account_id bigint,
+		  update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		  primary key(id),
+		  constraint FK_EL_EVENT_ID foreign key(event_id) references event(id),
+		  constraint FK_EL_USER_ACCOUNT_ID foreign key(user_account_id) references user_account(id)
+)engine=InnoDb default charset=utf8;
+=====================系统信息表=========================
+create table system_message(
+		 id bigint NOT NULL AUTO_INCREMENT,
+		 title varchar(50),
+		 content varchar(256),
+		 update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		 primary key(id)
+)engine=InnoDb default charset=utf8;
+======================消息推送相关表=====================
+create table push_message(
+		 id bigint NOT NULL AUTO_INCREMENT,
+		 title varchar(50),
+		 content varchar(256),
+		 update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		 effect_time timestamp,
+		 expire_time timestamp,
+		 push_times int(11),
+		 push_interval int(11),
+		 primary key(id)
+)engine=InnoDb default charset=utf8;
+create table push_message_statics(
+		 id bigint NOT NULL AUTO_INCREMENT,
+		 push_message_id bigint,
+		 pushed_time timestamp,
+		 pushed_client_count bigint,
+		 primary key(id),
+		 constraint FK_PMS_PUSH_MESSAGE_ID foreign key(push_message_id) references push_message(id)
+)engine=InnoDb default charset=utf8;
+
+======================房间相关表=====================
+create table game_match(
+		 id bigint NOT NULL AUTO_INCREMENT,
+		 name varchar(50),
+		 description varchar(256),
+		 primary key(id)
+)engine=InnoDb default charset=utf8;
+
+create table room(
+		  id bigint NOT NULL AUTO_INCREMENT,
+		  match_id bigint,
+		  enable int(11),
+		  effect_time timestamp,
+		  expired_time timestamp,
+		  name varchar(50),
+		  description varchar(256),
+		  primary key(id),
+		  constraint FK_ROOM_MATCH_ID foreign key(match_id) references game_match(id)
+)engine=InnoDb default charset=utf8;
+
+create table room_property_restrict(
+		  id bigint NOT NULL AUTO_INCREMENT,
+		  room_id bigint,
+		  property_id bigint,
+		  min_property_value bigint,
+		  enable int(11),
+		  primary key(id),
+		  constraint FK_RPR_ROOM_ID foreign key(room_id) references room(id),
+		  constraint FK_RPR_PROPERTY_ID foreign key(property_id) references property(id)
+)engine=InnoDb default charset=utf8;
+
+create table room_item_restrict(
+		   id bigint NOT NULL AUTO_INCREMENT,
+		   room_id bigint,
+		   item_id bigint,
+		   min_item_value bigint,
+		   enable int(11),
+		   primary key(id), 
+		   constraint FK_ROOM_ITEM_ROOM_ID foreign key(room_id) references room(id),
+		   constraint FK_ROOM_ITEM_ITEM_ID foreign key(item_id) references item(id)
+)engine=InnoDb default charset=utf8;
+
+create table room_payment(
+	     id bigint NOT NULL AUTO_INCREMENT,
+	     room_id bigint,
+	     item_id bigint,
+	     item_value bigint,
+	     primary key(id),
+	     constraint FK_ROOM_PAYMENT_ROOM_ID foreign key(room_id) references room(id),
+	     constraint FK_ROOM_PAYMENT_ITEM_ID foreign key(item_id) references item(id)
+)engine=InnoDb default charset=utf8;

@@ -1,0 +1,41 @@
+<FreeTournamentConfig xmlns="">
+	<roomId>10000</roomId>
+	<roomName>初来乍到</roomName>
+	<base>5</base>
+	<cheat>false</cheat>
+	<chat>false</chat>
+	<showNickname>false</showNickname>
+	<fee>0</fee>
+	<activeTimePattern> active time pattern ,see spring cron expression
+	</activeTimePattern>
+	<enableRobot>true</enableRobot>
+	<enrollRestrict>
+		<minCoins>500</minCoins>
+		<maxCoins>5000</maxCoins>
+	</enrollRestrict>
+	<enrollTicket>
+		<itemId>1001</itemId>
+		<itemAmount>1</itemAmount>
+	</enrollTicket>
+	<reward>
+		<ranking>0</ranking>
+		<itemId>1001</itemId>
+		<itemAmount>1</itemAmount>
+	</reward>
+
+
+	<deckConfig>
+		<winExp>20</winExp>
+		<loseExp>5</loseExp>
+		<firstCallRandom>true</firstCallRandom>
+		<bidWaitingTime>18000</bidWaitingTime>
+		<robotBidWaitingTime>10</robotBidWaitingTime>
+		<kickWaitingTime>8000</kickWaitingTime>
+		<robotKickWaitingTime>10</robotKickWaitingTime>
+		<pullWaitingTime>8000</pullWaitingTime>
+		<robotPullWaitingTime>10</robotPullWaitingTime>
+		<showHandWaitingTime>30000</showHandWaitingTime>
+		<robotShowHandWaitingTime>10</robotShowHandWaitingTime>
+	</deckConfig>
+
+</FreeTournamentConfig>

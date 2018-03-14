@@ -1,0 +1,222 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.sky.game</groupId>
+  <artifactId>game-protocol</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>game-protocol</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+  			<groupId>com.sky</groupId>
+  			<artifactId>game-service</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  		</dependency>
+
+
+  </dependencies>
+  
+ 
+  <build>
+  
+  	
+  	<plugins>
+  	
+  	<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.9.1</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${basedir}/src/main/java</source>
+								<source>${basedir}/src/main/commons</source>
+								<!-- 我们可以通过在这里添加多个source节点，来添加任意多个源文件夹 -->
+							</sources>
+						</configuration>
+					</execution>
+					<!-- <execution>
+						<id>add-resource</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-test-resource</goal>
+						</goals>
+						<configuration>
+							<resources>
+								<resource>
+								<directory>${basedir} src/labs/resource </ directory >
+								</resource>
+							</resources>
+						</configuration>
+					</execution> -->
+				
+				</executions>
+			</plugin>
+  	<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+            <archive>
+                <manifest>
+                    <mainClass>org.apache.camel.spring.Main</mainClass>
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <addClasspath>true</addClasspath>
+                </manifest>
+            </archive>
+        </configuration>
+    </plugin>
+ <!--   <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+            <descriptors>
+                <descriptor>src/main/assembly/dist.xml</descriptor>
+            </descriptors>
+        </configuration>
+        <executions>
+            <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>single</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin> --> 
+    
+    
+     <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>appassembler-maven-plugin</artifactId>
+        <version>1.8.1</version>        
+        <configuration>
+          <repositoryLayout>flat</repositoryLayout>
+          <includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>         
+
+          <daemons>
+            <daemon>
+              <id>game-protocol</id>
+              <mainClass>com.sky.game.protocol.ProtocolApp</mainClass>
+              <commandLineArguments>
+                <commandLineArgument>start</commandLineArgument>
+              </commandLineArguments>
+              
+               <generatorConfigurations>
+                <generatorConfiguration>
+                  <generator>jsw</generator>
+                  <includes>
+                
+                  <include>  macosx-universal-64</include>
+                   <!-- <include>linux-x86-32</include> -->
+                    <include>linux-x86-64</include>
+                    <include>windows-x86-32</include>
+                  </includes>
+                </generatorConfiguration>
+              </generatorConfigurations>
+              
+              <platforms>
+                <platform>jsw</platform>
+              </platforms>              
+            </daemon>
+            
+          
+          </daemons>
+        </configuration>
+        <executions>
+          <execution>
+            <id>generate-jsw-scripts</id>
+            <phase>package</phase>
+            <goals>
+              <goal>generate-daemons</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <plugin>
+            <groupId>so.heroin.maven.plugins</groupId>
+            <artifactId>deploy-maven-plugin</artifactId>
+            <version>1.0.0.0-SNAPSHOT</version>
+            <executions>
+					<execution>
+						<id>install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+					</execution>
+				</executions>
+            <!-- <configuration>
+                <hostname>192.168.1.250</hostname>
+                <username>developer</username>
+                <password>123456</password>
+                <port>22</port>
+                <remotePath>/home/developer/apache/htdocs/game-libs</remotePath>
+            </configuration> -->
+            <!-- <configuration>
+					<hostname>www.ipagat.com</hostname>
+					<username>developer</username>
+					<password>123456</password>
+					<port>22</port>
+					<remotePath>/home/developer/game-libs</remotePath>
+				</configuration> -->
+        </plugin>
+        
+        
+         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+        <configuration>
+          <show>private</show>
+          <nohelp>true</nohelp>
+        </configuration>
+      </plugin>
+  	
+  	</plugins>
+  	
+  <!-- 	<resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <exclude>**/*.conf</exclude>
+          <exclude>**/config.*</exclude>
+          
+        </excludes>
+      </resource>
+    
+    </resources> -->
+    
+    
+    
+     
+   
+
+  
+  </build>
+  
+ 
+</project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sky_game_manager_remote_activerecord_UserBank" object="${userbank}" path="/userbanks" z="uhHEXdPbZhTACyvuilITWzyE0oc=">
+        <field:display field="userAccountId" id="s_com_sky_game_manager_remote_activerecord_UserBank_userAccountId" object="${userbank}" z="jSHGYV9csBxl4zKmoEt5fTW5CTY="/>
+        <field:display calendar="true" dateTimePattern="${userBank_loandate_date_format}" field="loanDate" id="s_com_sky_game_manager_remote_activerecord_UserBank_loanDate" object="${userbank}" z="pA43EAgQ+KAaQIVq6ELJ29aNVBI="/>
+        <field:display calendar="true" dateTimePattern="${userBank_refunddate_date_format}" field="refundDate" id="s_com_sky_game_manager_remote_activerecord_UserBank_refundDate" object="${userbank}" z="6SEGrxrM7UOda5lbygY9d+YnCvw="/>
+        <field:display field="deposit" id="s_com_sky_game_manager_remote_activerecord_UserBank_deposit" object="${userbank}" z="5oZgWJAhrGd8SOENCUUEIop/xKM="/>
+        <field:display field="loan" id="s_com_sky_game_manager_remote_activerecord_UserBank_loan" object="${userbank}" z="jmils5VwFu9vRIEznyvz3uq5MkU="/>
+        <field:display field="bankPw" id="s_com_sky_game_manager_remote_activerecord_UserBank_bankPw" object="${userbank}" z="gMv8UOZv8HJjOJDo4WhYfwrFmzk="/>
+        <field:display field="repayment" id="s_com_sky_game_manager_remote_activerecord_UserBank_repayment" object="${userbank}" z="fhmawBQpo8wdN30pYZjPPp3RK90="/>
+    </page:show>
+</div>

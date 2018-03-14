@@ -1,0 +1,25 @@
+<Configuration xmlns="">
+	<name>Management</name>
+	<ip>127.0.0.1</ip>
+	<port>18003</port>
+	<sync>
+		<locators></locators>
+	</sync>
+	<async>
+		<locators></locators>
+	</async>
+	<remote>
+		<locators>
+				<locator>
+				<service>ApiDf</service>
+				<ns>com.sky.game.internal.service.df.upmp</ns>
+			</locator>
+			
+				<locator>
+				<service>Protocol</service>
+				<ns>com.sky.game.internal.service.protocol</ns>
+			</locator>
+		
+		</locators>
+	</remote>
+</Configuration>
